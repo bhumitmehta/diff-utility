@@ -1,37 +1,27 @@
 package com.mycompany.app;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import com.mycompany.app.*;
+public class App {
+    public static void main(String[] args) {
+        String filePath2 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/origcc.txt";
+        String filePath1 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/newcc.txt";
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        
-        String filePath = "/Users/bhumitmehta/projects/alag/my-app/src/main/java/com/mycompany/app/test.txt";
+        LCS lcs = new LCS(filePath1, filePath2);
 
-        // Try-with-resources statement to automatically close the FileReader
-        try (FileReader fileReader = new FileReader(filePath)) {
-            int character;
-            int lines=0;
-            // Read characters until end of file (EOF) is reached
-            while ((character = fileReader.read()) != -1) {
-                // Process the character (e.g., print it)
-                System.out.println((char) character);
-                if((char)character == '\n'){
-                         System.out.println("here is the new line ");
-                         lines++;
-                }
-            }
-            System.out.println(lines);
-        } catch (IOException e) {
-            // Handle any IO exceptions that may occur
-            e.printStackTrace();
+        // Print the longest common subsequence
+        System.out.println("Longest Common Subsequence:");
+        for (String line : lcs.getSeq()) {
+            System.out.println(line);
+        }
+
+        // Print the differences between the files
+        System.out.println("\nDifferences:");
+        for (String diff : lcs.getDiffList()) {
+            System.out.println(diff);
         }
     }
 }
