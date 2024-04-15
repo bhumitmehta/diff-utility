@@ -36,7 +36,7 @@ public class LCS {
                 stringBuilder.append(line+" ");
              // Append the current line to the StringBuilder
                 if (line.contains(".")) {
-                    lines.add(stringBuilder.toString()); // Add the accumulated string to the lines list
+                    lines.add(stringBuilder.toString()+"\n"); // Add the accumulated string to the lines list
                     stringBuilder.setLength(0); // Clear the StringBuilder for the next line
                 }
             }

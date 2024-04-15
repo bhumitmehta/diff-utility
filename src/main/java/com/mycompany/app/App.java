@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import com.mycompany.app.*;
 public class App {
     public static void main(String[] args) {
-        String filePath2 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/origcc.txt";
-        String filePath1 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/newcc.txt";
+        String filePath1 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/original.txt";
+        String filePath2 = "/Users/bhumitmehta/projects/alag/my-app/src/test/java/com/mycompany/app/challenge-diff/new.txt";
 
         LCS lcs = new LCS(filePath1, filePath2);
 
